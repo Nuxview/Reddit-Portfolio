@@ -17,18 +17,12 @@ const ProjectSection = () => {
         ))}
       </div>
       <div className="flex justify-center pt-6">
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="bg-card border border-border border-dashed text-foreground text-base"
-        >
+        <Button asChild size="lg" className="text-base">
           <Link to="/projects">
             View all Projects
             <ChevronRight />
           </Link>
         </Button>
-        
       </div>
     </section>
   );

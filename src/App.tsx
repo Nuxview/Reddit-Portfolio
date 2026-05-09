@@ -5,6 +5,7 @@ import SkillSection from "./components/SkillSection";
 import Stats from "./components/Stats";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import BlogSection from "./components/BlogSection";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Hero />
           <SkillSection />
           <ProjectSection />
+          <BlogSection />
           <Stats />
           <Footer />
         </main>

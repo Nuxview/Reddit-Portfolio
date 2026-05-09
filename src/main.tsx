@@ -11,6 +11,7 @@ import ProjectDetail from "./pages/ProjectDetail.tsx";
 import Contact from "./pages/Contact.tsx";
 import Navbar from "./components/Navbar.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import BlogDetail from "./pages/BlogDetail.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -25,9 +26,10 @@ createRoot(document.getElementById("root")!).render(
         <Navbar />
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blogs" element={<Blog />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
