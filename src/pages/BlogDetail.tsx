@@ -1,6 +1,8 @@
 import { blogs } from "@/data/blog";
 import { ChevronLeft, Clock, Tag } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -61,14 +63,21 @@ const BlogDetail = () => {
         <hr className="border-dashed border-border/60" />
 
         <article className="prose prose-neutral dark:prose-invert max-w-none">
-          {blog.content.split("\n\n").map((paragraph, idx) => (
-            <p
-              key={idx}
-              className="text-base leading-8 text-muted-foreground font-light mb-5"
-            >
-              {paragraph}
-            </p>
-          ))}
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              img: ({ src, alt }) => (
+                <img
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  className="rounded-lg w-full"
+                />
+              ),
+            }}
+          >
+            {blog.content}
+          </Markdown>
         </article>
       </div>
     </main>
