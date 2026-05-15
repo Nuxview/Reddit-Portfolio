@@ -93,3 +93,5 @@ export const projects: Project[] = [
     githubLink: "https://github.com/CharanMunur/shadcn-scaffold",
   },
 ];
+
+// End of projects data
