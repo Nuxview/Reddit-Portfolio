@@ -1,9 +1,9 @@
 import { BadgeCheck, BookText, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
-import TechIcon from "./TechIcon";
+import TechIcon from "./helpers/TechIcon";
 import { skills } from "@/data/tech";
 import { socials } from "@/data/socials";
-import SocialIcon from "./SocialIcon";
+import SocialIcon from "./helpers/SocialIcon";
 import { motion } from "framer-motion";
 
 import { containerVariants, itemVariants } from "@/lib/motionVariants";
@@ -11,7 +11,7 @@ import { containerVariants, itemVariants } from "@/lib/motionVariants";
 const Hero = () => {
   return (
     <section
-      className="flex flex-col justify-center pt-24 pb-16 sm:pt-32 sm:pb-12"
+      className="flex flex-col justify-center pt-24 pb-20 sm:pt-32 sm:pb-12"
       id="home"
     >
       <motion.div

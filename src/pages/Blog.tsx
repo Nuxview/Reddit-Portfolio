@@ -2,7 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import { blogs } from "@/data/blog";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { FadeIn } from "@/components/FadeIn";
+import { FadeIn } from "@/components/helpers/FadeIn";
 
 const Blog = () => {
   const navigate = useNavigate();
@@ -17,7 +17,12 @@ const Blog = () => {
           <ChevronLeft size={20} strokeWidth={2.25} /> Back to Home
         </button>
       </FadeIn>
-      <FadeIn delay={0.1} yOffset={15} duration={0.5} className="flex flex-col gap-2">
+      <FadeIn
+        delay={0.1}
+        yOffset={15}
+        duration={0.5}
+        className="flex flex-col gap-2"
+      >
         <h1 className="text-2xl sm:text-3xl font-semibold">All Blogs</h1>
         <p className="text-muted-foreground font-light text-lg">
           Thoughts, write-ups, and explorations on design, development, and

@@ -1,9 +1,8 @@
 import { LuGithub } from "react-icons/lu";
 import { BiLink } from "react-icons/bi";
-import TechIcon from "./TechIcon";
+import TechIcon from "./helpers/TechIcon";
 import type { Project } from "@/data/projects";
 import { Link } from "react-router-dom";
-
 
 const ProjectCard = ({
   name,
@@ -49,7 +48,9 @@ const ProjectCard = ({
           </a>
         </div>
         <p className="text-xs font-mono text-muted-foreground hover:text-foreground cursor-pointer transition-colors uppercase tracking-widest">
-          <Link to={`/projects/${name.toLowerCase().replace(/\s+/g, '-')}`}>Details →</Link>
+          <Link to={`/projects/${name.toLowerCase().replace(/\s+/g, "-")}`}>
+            Details →
+          </Link>
         </p>
       </div>
     </div>

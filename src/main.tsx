@@ -10,9 +10,9 @@ import Projects from "./pages/Projects.tsx";
 import ProjectDetail from "./pages/ProjectDetail.tsx";
 import Contact from "./pages/Contact.tsx";
 import Navbar from "./components/Navbar.tsx";
-import ScrollToTop from "./components/ScrollToTop.tsx";
+import ScrollToTop from "./components/helpers/ScrollToTop.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
-import SmoothScroll from "./components/SmoothScroll.tsx";
+import SmoothScroll from "./components/helpers/SmoothScroll.tsx";
 import Footer from "./components/Footer.tsx";
 
 createRoot(document.getElementById("root")!).render(

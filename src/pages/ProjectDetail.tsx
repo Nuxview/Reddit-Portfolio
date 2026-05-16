@@ -3,9 +3,9 @@ import { projects } from "@/data/projects";
 import { ChevronLeft } from "lucide-react";
 import { LuGithub } from "react-icons/lu";
 import { BiLink } from "react-icons/bi";
-import TechIcon from "@/components/TechIcon";
+import TechIcon from "@/components/helpers/TechIcon";
 import { useNavigate, useParams } from "react-router-dom";
-import { FadeIn } from "@/components/FadeIn";
+import { FadeIn } from "@/components/helpers/FadeIn";
 
 const ProjectDetail = () => {
   const navigate = useNavigate();
@@ -43,8 +43,8 @@ const ProjectDetail = () => {
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <a href={project.githubLink} target="_blank" rel="noreferrer">
               <Button
-              variant="outline"
-              className="border border-border border-dashed"
+                variant="outline"
+                className="border border-border border-dashed"
                 size="lg"
               >
                 <LuGithub className="w-4 h-4 mr-1.5" />
@@ -52,9 +52,7 @@ const ProjectDetail = () => {
               </Button>
             </a>
             <a href={project.liveLink} target="_blank" rel="noreferrer">
-              <Button
-                size="lg"
-              >
+              <Button size="lg">
                 <BiLink className="w-4 h-4 mr-1.5" />
                 Live Demo
               </Button>

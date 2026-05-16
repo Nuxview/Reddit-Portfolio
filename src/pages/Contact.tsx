@@ -1,4 +1,4 @@
-import { FadeIn } from "@/components/FadeIn";
+import { FadeIn } from "@/components/helpers/FadeIn";
 import { socials } from "@/data/socials";
 import { useTheme } from "next-themes";
 import { ArrowUpRight, ChevronLeft } from "lucide-react";
@@ -23,12 +23,15 @@ const Contact = () => {
         {/* Left Side: Matter */}
         <div className="flex flex-col gap-10 justify-center">
           <FadeIn delay={0.1}>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Let's connect</h1>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              Let's connect
+            </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. 
-              Whether you have a question or just want to say hi, feel free to drop a message!
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your visions. Whether you have a
+              question or just want to say hi, feel free to drop a message!
             </p>
           </FadeIn>
         </div>
@@ -36,16 +39,22 @@ const Contact = () => {
         {/* Right Side: Links */}
         <div className="flex flex-col gap-3 justify-center">
           {socials.map((social, index) => (
-            <FadeIn key={social.name} delay={0.2 + (index * 0.05)}>
+            <FadeIn key={social.name} delay={0.2 + index * 0.05}>
               <a
                 href={social.href}
                 target={social.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={social.href.startsWith("mailto") ? undefined : "noreferrer"}
+                rel={
+                  social.href.startsWith("mailto") ? undefined : "noreferrer"
+                }
                 className="group flex items-center justify-between rounded-xl border border-dashed border-border/80 bg-card p-4 transition-all hover:border-foreground/30 hover:bg-muted/20"
               >
                 <div className="flex items-center gap-4">
                   <img
-                    src={resolvedTheme === "dark" && social.darkIcon ? social.darkIcon : social.icon}
+                    src={
+                      resolvedTheme === "dark" && social.darkIcon
+                        ? social.darkIcon
+                        : social.icon
+                    }
                     alt={social.name}
                     className="h-6 w-6 rounded-sm object-contain"
                   />

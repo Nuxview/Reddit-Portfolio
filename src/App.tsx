@@ -1,7 +1,8 @@
 import Hero from "./components/Hero";
 import SkillSection from "./components/SkillSection";
-import { FadeIn } from "./components/FadeIn";
+import { FadeIn } from "./components/helpers/FadeIn";
 import { lazy, Suspense } from "react";
+import QuoteSection from "./components/QuoteSection";
 
 const ProjectSection = lazy(() => import("./components/ProjectSection"));
 const BlogSection = lazy(() => import("./components/BlogSection"));
@@ -16,19 +17,40 @@ const App = () => {
           <FadeIn>
             <SkillSection />
           </FadeIn>
-          <Suspense fallback={<div className="h-40 animate-pulse bg-muted/20 rounded-xl" />}>
+          <Suspense
+            fallback={
+              <div className="h-40 animate-pulse bg-muted/20 rounded-xl" />
+            }
+          >
             <FadeIn>
               <ProjectSection />
             </FadeIn>
           </Suspense>
-          <Suspense fallback={<div className="h-40 animate-pulse bg-muted/20 rounded-xl" />}>
+          <Suspense
+            fallback={
+              <div className="h-40 animate-pulse bg-muted/20 rounded-xl" />
+            }
+          >
             <FadeIn>
               <BlogSection />
             </FadeIn>
           </Suspense>
-          <Suspense fallback={<div className="h-40 animate-pulse bg-muted/20 rounded-xl" />}>
+          <Suspense
+            fallback={
+              <div className="h-40 animate-pulse bg-muted/20 rounded-xl" />
+            }
+          >
             <FadeIn>
               <Stats />
+            </FadeIn>
+          </Suspense>
+          <Suspense
+            fallback={
+              <div className="h-24 animate-pulse bg-muted/20 rounded-xl" />
+            }
+          >
+            <FadeIn>
+              <QuoteSection />
             </FadeIn>
           </Suspense>
         </main>

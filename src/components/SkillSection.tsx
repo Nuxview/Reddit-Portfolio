@@ -1,10 +1,8 @@
 import { useState } from "react";
-import SkillRow from "./SkillRow";
-import TechIcon from "./TechIcon";
+import SkillRow from "./helpers/SkillRow";
+import TechIcon from "./helpers/TechIcon";
 import { skillRows } from "@/data/tech";
 import { LayoutGrid, List } from "lucide-react";
-
-
 
 const SkillSection = () => {
   const [isInline, setIsInline] = useState(false);

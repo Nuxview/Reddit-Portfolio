@@ -2,7 +2,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
-import { FadeIn } from "@/components/FadeIn";
+import { FadeIn } from "@/components/helpers/FadeIn";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -17,10 +17,16 @@ const Projects = () => {
           <ChevronLeft size={20} strokeWidth={2.25} /> Back to Home
         </button>
       </FadeIn>
-      <FadeIn delay={0.1} yOffset={15} duration={0.5} className="flex flex-col gap-2">
+      <FadeIn
+        delay={0.1}
+        yOffset={15}
+        duration={0.5}
+        className="flex flex-col gap-2"
+      >
         <h1 className="text-2xl sm:text-3xl font-semibold">All Projects</h1>
         <p className="text-muted-foreground font-light text-lg">
-          A collection of my recent work, side projects, and experiments. Built from scratch with a focus on clean code and great user experiences.
+          A collection of my recent work, side projects, and experiments. Built
+          from scratch with a focus on clean code and great user experiences.
         </p>
       </FadeIn>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 mt-6">
