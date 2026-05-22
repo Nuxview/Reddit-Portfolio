@@ -3,6 +3,7 @@ import { projects } from "@/data/projects";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import ComingSoonCard from "./ComingSoonCard";
 
 const ProjectSection = () => {
   return (
@@ -14,6 +15,8 @@ const ProjectSection = () => {
         {projects.map((project) => (
           <ProjectCard key={project.name} {...project} />
         ))}
+
+        <ComingSoonCard />
       </div>
       <div className="flex justify-center pt-6">
         <Button asChild size="lg" className="text-base">

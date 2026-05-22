@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
+import ComingSoonCard from "@/components/ComingSoonCard";
 import { projects } from "@/data/projects";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
@@ -35,6 +36,9 @@ const Projects = () => {
             <ProjectCard {...project} />
           </FadeIn>
         ))}
+        <FadeIn delay={0.15 + projects.length * 0.05} yOffset={20}>
+          <ComingSoonCard />
+        </FadeIn>
       </div>
     </main>
   );
