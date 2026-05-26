@@ -12,13 +12,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
       if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
         console.error("visitors api error: missing Supabase configuration");
-        return res.status(200).json({ count: null });
+        return res.status(200).json({ count: null, total: null });
       }
 
       const { visitor_id } = req.body;
 
       if (!visitor_id) {
-        return res.status(200).json({ count: null });
+        return res.status(200).json({ count: null, total: null });
       }
 
       const authHeaders = {
@@ -58,16 +58,41 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           "visitors api error: failed to read visitor count",
           await countRes.text(),
         );
-        return res.status(200).json({ count: null });
+        return res.status(200).json({ count: null, total: null });
       }
 
       const countHeader = countRes.headers.get("content-range");
-      const count = Number(countHeader?.split("/")[1] ?? 0);
+      const total = Number(countHeader?.split("/")[1] ?? 0);
 
-      return res.status(200).json({ count });
+      const orderedVisitorsRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/visitors?select=visitor_id,created_at&order=created_at.asc&order=id.asc`,
+        {
+          headers: authHeaders,
+        },
+      );
+
+      if (!orderedVisitorsRes.ok) {
+        console.error(
+          "visitors api error: failed to read visitor order",
+          await orderedVisitorsRes.text(),
+        );
+        return res.status(200).json({ count: null, total });
+      }
+
+      const orderedVisitors = (await orderedVisitorsRes.json()) as Array<{
+        visitor_id?: string;
+      }>;
+      const count = orderedVisitors.findIndex(
+        (row) => row.visitor_id === visitor_id,
+      );
+
+      return res.status(200).json({
+        count: count === -1 ? null : count + 1,
+        total,
+      });
     } catch (error) {
       console.error("visitors api error:", error);
-      return res.status(200).json({ count: null });
+      return res.status(200).json({ count: null, total: null });
     }
   }
   return res.status(405).json({ error: "Method not allowed" });

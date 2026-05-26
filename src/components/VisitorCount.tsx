@@ -5,6 +5,7 @@ import { Skeleton } from "./ui/skeleton";
 
 const VisitorCount = () => {
   const [count, setCount] = useState<number | null>(null);
+  const [total, setTotal] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -24,9 +25,12 @@ const VisitorCount = () => {
           return;
         }
 
-        const data = (await res.json()) as { count?: number };
+        const data = (await res.json()) as { count?: number; total?: number };
         if (active && typeof data.count === "number") {
           setCount(data.count);
+        }
+        if (active && typeof data.total === "number") {
+          setTotal(data.total);
         }
       } catch {
         // Keep the footer quiet if the API is unavailable.
@@ -60,13 +64,13 @@ const VisitorCount = () => {
   };
 
   return (
-    <div className="flex items-center justify-center rounded-lg">
+    <div className="flex w-full items-center justify-center rounded-lg sm:justify-start">
       {loading ? (
-        <div className="flex items-center gap-2" aria-busy="true">
+        <div className="flex w-full max-w-full items-center justify-center gap-2" aria-busy="true">
           <Skeleton className="size-4 rounded-full" />
           <div className="space-y-1">
-            <Skeleton className="h-3 w-28" />
-            <Skeleton className="h-3 w-20" />
+            <Skeleton className="h-3 w-24 sm:w-28" />
+            <Skeleton className="h-3 w-16 sm:w-20" />
           </div>
         </div>
       ) : count === null ? (
@@ -76,14 +80,20 @@ const VisitorCount = () => {
           </span>
         </p>
       ) : (
-        <div className="flex items-center gap-2">
-          <UserRound size={18} className="text-muted-foreground" />
-          <p className="text-muted-foreground">
-            You are{" "}
-            <span className="text-foreground text-base">
-              {count} <sup>{getOrdinal(count)}</sup>
-            </span>{" "}
-            visitor
+        <div className="flex w-full items-center justify-center gap-2 sm:justify-start">
+          <UserRound size={18} className="shrink-0 text-muted-foreground" />
+          <p className="flex min-w-0 flex-wrap items-center justify-center gap-x-1 gap-y-0.5 text-center text-sm leading-tight text-muted-foreground sm:justify-start sm:text-left">
+            <span>You are</span>
+            <span className="whitespace-nowrap text-lg font-semibold leading-none text-foreground tabular-nums sm:text-xl">
+              {count}
+              <sup className="ml-0.5 align-super text-[0.6em] font-medium">
+                {getOrdinal(count)}
+              </sup>
+            </span>
+            <span className="whitespace-nowrap text-sm font-medium leading-none text-muted-foreground tabular-nums sm:text-base">
+              {total !== null ? `/${total}` : ""}
+            </span>
+            <span className="whitespace-nowrap">visitors</span>
           </p>
         </div>
       )}
