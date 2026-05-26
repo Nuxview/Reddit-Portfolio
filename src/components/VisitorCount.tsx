@@ -9,14 +9,24 @@ const VisitorCount = () => {
     const track = async () => {
       const visitor_id = getOrCreateFingerprint();
 
-      const res = await fetch("/api/visitors", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ visitor_id }),
-      });
+      try {
+        const res = await fetch("/api/visitors", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ visitor_id }),
+        });
 
-      const data = await res.json();
-      setCount(data.count);
+        if (!res.ok) {
+          return;
+        }
+
+        const data = (await res.json()) as { count?: number };
+        if (typeof data.count === "number") {
+          setCount(data.count);
+        }
+      } catch {
+        // Keep the footer quiet if the API is unavailable.
+      }
     };
 
     track();
@@ -38,7 +48,7 @@ const VisitorCount = () => {
   };
 
   return (
-    <div className="flex-row items-center justify-center rounded-lg ">
+    <div className="flex-row items-center justify-center rounded-lg">
       {count === null ? (
         <p className="text-muted-foreground text-sm">counting visitors...</p>
       ) : (
