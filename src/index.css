@@ -207,7 +207,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-[15px] antialiased;
   }
 
   .react-activity-calendar__tooltip {
@@ -216,7 +216,7 @@
 
   .react-activity-calendar__count {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--muted-foreground);
     line-height: 1.35;
   }

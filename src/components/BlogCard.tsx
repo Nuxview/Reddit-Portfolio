@@ -22,7 +22,7 @@ const BlogCard = ({ title, description, tags, date, readTime }: Blog) => {
         to={`/blogs/${title.toLowerCase().replace(/\s+/g, "-")}`}
         className="flex flex-row items-start justify-between w-full group gap-3 sm:gap-4 mt-1"
       >
-        <span className="text-lg sm:text-xl font-semibold text-foreground group-hover:underline decoration-1 underline-offset-4 transition-all duration-200 line-clamp-2">
+        <span className="text-base font-medium text-foreground group-hover:underline decoration-1 underline-offset-4 transition-all duration-200 line-clamp-2 sm:text-lg">
           {title}
         </span>
         <ArrowUpRight className="w-5 h-5 shrink-0 text-muted-foreground group-hover:text-foreground transition-colors mt-0.5" />

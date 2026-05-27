@@ -11,7 +11,9 @@ const SkillSection = () => {
     <section id="skills" className="w-full space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <p className="text-3xl font-semibold">Technologies</p>
+          <p className="text-2xl font-light tracking-tight sm:text-3xl">
+            Technologies
+          </p>
         </div>
         <button
           onClick={() => setIsInline(!isInline)}

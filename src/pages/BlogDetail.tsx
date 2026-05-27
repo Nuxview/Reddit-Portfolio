@@ -14,7 +14,7 @@ const BlogDetail = () => {
 
   if (!blog) {
     return (
-      <div className="flex min-h-screen items-center justify-center text-2xl text-muted-foreground">
+        <div className="flex min-h-screen items-center justify-center text-xl text-muted-foreground">
         Blog not found
       </div>
     );
@@ -47,10 +47,10 @@ const BlogDetail = () => {
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-bold leading-tight mt-4">
+          <h1 className="mt-4 text-2xl font-light leading-tight tracking-tight sm:text-4xl">
             {blog.title}
           </h1>
-          <p className="font-light text-xl text-muted-foreground mt-4">
+          <p className="mt-4 text-lg font-light text-muted-foreground sm:text-xl">
             {blog.description}
           </p>
         </FadeIn>

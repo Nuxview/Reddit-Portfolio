@@ -11,7 +11,7 @@ const ComingSoonCard = () => {
       </div>
 
       <div className="px-2 mt-4">
-        <div className="text-xl font-semibold">Project Unknown</div>
+        <div className="text-lg font-medium tracking-tight">Project Unknown</div>
         <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
           Something awesome is currently being built. Exploring new ideas and technologies. Stay tuned for updates.
         </p>

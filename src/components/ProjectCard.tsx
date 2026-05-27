@@ -24,7 +24,7 @@ const ProjectCard = ({
       </div>
 
       <div className="px-2 mt-4">
-        <div className="text-xl font-semibold">{name}</div>
+        <div className="text-lg font-medium tracking-tight">{name}</div>
         <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
           {description}
         </p>

@@ -24,7 +24,9 @@ const Projects = () => {
         duration={0.5}
         className="flex flex-col gap-2"
       >
-        <h1 className="text-2xl sm:text-3xl font-semibold">All Projects</h1>
+        <h1 className="text-2xl font-light tracking-tight sm:text-3xl">
+          All Projects
+        </h1>
         <p className="text-muted-foreground font-light text-lg">
           A collection of my recent work, side projects, and experiments. Built
           from scratch with a focus on clean code and great user experiences.

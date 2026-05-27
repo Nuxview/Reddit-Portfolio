@@ -23,7 +23,7 @@ const Contact = () => {
         {/* Left Side: Matter */}
         <div className="flex flex-col gap-10 justify-center">
           <FadeIn delay={0.1}>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-3xl font-light tracking-tight sm:text-4xl">
               Let's connect
             </h1>
           </FadeIn>

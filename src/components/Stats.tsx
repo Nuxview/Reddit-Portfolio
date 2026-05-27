@@ -121,7 +121,9 @@ const Stats = ({ year: initialYear = 2026 }: StatsProps) => {
       <div className="flex flex-col gap-3 pb-3 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex flex-col gap-1 mb-2">
           <div className="flex items-center gap-3">
-            <p className="text-3xl font-semibold">Github Stats</p>
+            <p className="text-2xl font-light tracking-tight sm:text-3xl">
+              GitHub Activity
+            </p>
           </div>
         </div>
 
@@ -135,7 +137,7 @@ const Stats = ({ year: initialYear = 2026 }: StatsProps) => {
                 type="button"
                 onClick={() => setYear(option)}
                 className={cn(
-                  "relative px-1.5 pb-1 font-medium tracking-tight text-muted-foreground transition-colors hover:text-foreground",
+                  "relative px-1.5 pb-1 font-normal tracking-tight text-muted-foreground transition-colors hover:text-foreground",
                   isActive &&
                     "text-foreground after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-foreground",
                 )}

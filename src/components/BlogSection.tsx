@@ -8,7 +8,9 @@ const BlogSection = () => {
   return (
     <section id="blogs" className="w-full space-y-6">
       <div className="flex gap-3">
-        <p className="text-3xl font-semibold">Blogs</p>
+        <p className="text-2xl font-light tracking-tight sm:text-3xl">
+          Blogs
+        </p>
       </div>
       <div className="flex flex-col gap-4">
         {blogs.map((blog) => (

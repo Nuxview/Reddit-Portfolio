@@ -23,7 +23,9 @@ const Blog = () => {
         duration={0.5}
         className="flex flex-col gap-2"
       >
-        <h1 className="text-2xl sm:text-3xl font-semibold">All Blogs</h1>
+        <h1 className="text-2xl font-light tracking-tight sm:text-3xl">
+          All Blogs
+        </h1>
         <p className="text-muted-foreground font-light text-lg">
           Thoughts, write-ups, and explorations on design, development, and
           everything in between.

@@ -9,7 +9,9 @@ const ProjectSection = () => {
   return (
     <section id="projects" className="w-full space-y-6">
       <div className="flex gap-3">
-        <p className="text-3xl font-semibold">Projects</p>
+        <p className="text-2xl font-light tracking-tight sm:text-3xl">
+          Projects
+        </p>
       </div>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
         {projects.map((project) => (
