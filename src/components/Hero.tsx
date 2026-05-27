@@ -30,11 +30,11 @@ const Hero = () => {
             <img
               src="https://avatars.githubusercontent.com/u/198460996?v=4"
               alt="profile"
-              className="h-28 w-28 rounded-full border-2 border-border p-1 shadow-sm sm:h-40 sm:w-40"
+              className="h-35 w-35 rounded-full border-2 border-border p-1 shadow-sm sm:h-40 sm:w-40"
             />
           </div>
           <div className="flex h-full flex-col justify-center gap-1 sm:gap-2">
-            <h1 className="flex items-center gap-1 text-right text-xl font-light tracking-tight sm:text-2xl md:text-2xl">
+            <h1 className="flex items-center gap-1 text-right text-2xl font-medium tracking-tight sm:text-2xl md:text-2xl">
               Charan Munur
               <span className="text-background">
                 <BadgeCheck color="currentColor" fill="#3b82f6" size={28} />
