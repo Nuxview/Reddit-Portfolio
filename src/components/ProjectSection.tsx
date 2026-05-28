@@ -24,7 +24,7 @@ const ProjectSection = () => {
         <Button asChild size="lg" className="text-base">
           <Link to="/projects">
             View all Projects
-            <ChevronRight />
+            <ChevronRight strokeWidth={2.25} />
           </Link>
         </Button>
       </div>

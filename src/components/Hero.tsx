@@ -91,7 +91,6 @@ const Hero = () => {
             <a href="/contact">
               <Button
                 size="lg"
-                className="px-4"
               >
                 Get in Touch
                 <ChevronRight strokeWidth={2.25} />
@@ -105,7 +104,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="bg-card text-foreground border-dashed cursor-pointer px-4"
+                className="bg-card text-foreground border-dashed cursor-pointer"
               >
                 Resume
                 <BookText />

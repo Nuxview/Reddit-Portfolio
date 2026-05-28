@@ -21,7 +21,7 @@ const BlogSection = () => {
         <Button asChild size="lg" className="text-base">
           <Link to="/blogs">
             View all Blogs
-            <ChevronRight />
+            <ChevronRight strokeWidth={2.25} />
           </Link>
         </Button>
       </div>
